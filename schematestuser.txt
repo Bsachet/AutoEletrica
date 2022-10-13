@@ -1,0 +1,96 @@
+
+CREATE USER 'atendente'@'127.0.0.1' IDENTIFIED BY 'password';
+
+CREATE USER 'analista_de_operacoes'@'127.0.0.1' IDENTIFIED BY 'password';
+
+CREATE USER 'mecanico'@'127.0.0.1' IDENTIFIED BY 'password';
+
+CREATE USER 'adiministrador'@'127.0.0.1' IDENTIFIED BY 'manager_password';
+
+
+
+
+GRANT CREATE ON pessoa TO 'atendente'@'127.0.0.1';
+
+GRANT CREATE ON situacao TO 'atendente'@'127.0.0.1';
+
+GRANT CREATE ON veiculo TO 'atendente'@'127.0.0.1';
+
+GRANT CREATE ON produto TO 'atendente'@'127.0.0.1';
+
+GRANT CREATE ON ordemServico TO 'atendente'@'127.0.0.1';
+
+                                                                                                                                                                                                                               
+
+GRANT INSERT ON pessoa TO 'atendente'@'127.0.0.1';
+
+GRANT INSERT ON situacao TO 'atendente'@'127.0.0.1';
+
+GRANT INSERT ON veiculo TO 'atendente'@'127.0.0.1';
+
+GRANT INSERT ON produto TO 'atendente'@'127.0.0.1';
+
+GRANT INSERT ON ordemServico TO 'atendente'@'127.0.0.1';
+
+
+GRANT SELECT ON pessoa TO 'atendente'@'127.0.0.1';
+
+GRANT SELECT ON situacao TO 'atendente'@'127.0.0.1';
+
+GRANT SELECT ON veiculo TO 'atendente'@'127.0.0.1';
+
+GRANT SELECT ON produto TO 'atendente'@'127.0.0.1';
+
+GRANT SELECT ON ordemServico TO 'atendente'@'127.0.0.1';
+
+
+GRANT UPDATE ON pessoa TO 'atendente'@'127.0.0.1';
+
+GRANT UPDATE ON situacao TO 'atendente'@'127.0.0.1';
+
+GRANT UPDATE ON veiculo TO 'atendente'@'127.0.0.1';
+
+GRANT UPDATE ON produto TO 'atendente'@'127.0.0.1';
+
+GRANT UPDATE ON ordemServico TO 'atendente'@'127.0.0.1';
+
+
+
+
+GRANT ALL ON situacao TO 'analista_de_operacoes'@'127.0.0.1';
+
+REVOKE DROP ON situacao from 'analista_de_operacoes'@'127.0.0.1';
+
+REVOKE GRANT OPTION ON situacao from 'analista_de_operacoes'@'127.0.0.1';
+
+REVOKE DELETE ON situacao from 'analista_de_operacoes'@'127.0.0.1';
+
+GRANT ALL ON produto TO 'analista_de_operacoes'@'127.0.0.1';
+
+REVOKE DROP ON produto from 'analista_de_operacoes'@'127.0.0.1';
+
+REVOKE GRANT OPTION ON produto from 'analista_de_operacoes'@'127.0.0.1';
+
+
+
+
+
+GRANT UPDATE ON veiculo TO 'mecanico'@'127.0.0.1';
+
+GRANT SELECT ON veiculo TO 'mecanico'@'127.0.0.1';
+
+
+
+
+GRANT SELECT ON pessoa TO 'mecanico'@'127.0.0.1';
+
+
+
+GRANT SELECT ON situacao TO 'mecanico'@'127.0.0.1';
+
+
+
+GRANT ALL ON * TO 'adiministrador'@'127.0.0.1';
+
+
+FLUSH PRIVILEGES;
