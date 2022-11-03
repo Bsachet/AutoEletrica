@@ -48,6 +48,44 @@
   
     }
 
+
+    function insertVeiculo(idVeiculo, tipoVeiculo, descricao, marca, placa, quilometragem,Pessoa_idCliente, Situacao_idSituacao){
+      var veiculo ={
+        idVeiculo: idVeiculo,
+        tipoVeiculo: tipoVeiculo,
+        descricao: descricao,
+        marca: marca,
+        placa: placa,
+        quilometragem: quilometragem,
+        Pessoa_idCliente: Pessoa_idCliente,
+        Situacao_idSituacao: Situacao_idSituacao
+      }
+    
+      var query = connection.query('insert into veiculo set ?', veiculo, function (err, result) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.error(result);
+      });
+    
+      }
+
+      function deleteVeiculo(idVeiculo){
+        var veiculo ={
+          idVeiculo: idVeiculo
+        }
+        var query = connection.query('delete from veiculo where idveiculo = ?', idveiculo, function (err, result){
+            if (err) {
+          console.error(err);
+          return;
+        }
+        console.error(result);
+      });
+    }
+
+    
+
     function deleteProduto(idproduto){
       var produto ={
         idproduto: idproduto
@@ -109,3 +147,31 @@
   console.error(result);
 });
   }
+
+
+
+  function displayVeiculo(){
+
+    var query = connection.query('SELECT * FROM VEICULO', function (err, result) {
+      if (err) {
+        req.flash('error', err)
+        res.render('profile', { data: '' })
+      } else {
+        res.render('profile', { data: result })
+      }
+    })
+  }
+
+  function displayProduto(){
+
+    var query = connection.query('SELECT * FROM PRODUTO', function (err, result) {
+      if (err) {
+        req.flash('error', err)
+        res.render('profile', { data: '' })
+      } else {
+        res.render('profile', { data: result })
+      }
+    })
+  }
+
+  
