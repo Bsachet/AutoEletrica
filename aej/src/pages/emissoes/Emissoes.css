@@ -10,21 +10,10 @@
 /* NavBar de Informações */
 .nav-list{
   margin: 5%;
+  display: inline-flex;
+ 
 }
 
-.nav-list li{
-  display: inline;
-  padding: 25px;
-}
-
-.nav-list li a{
-  text-decoration: none;
-}
-
-.nav-list li a:hover{
-  color: #7047EB;
-  transition: background .3s;
-}
 
 /* Formulário */
 
@@ -37,6 +26,23 @@
   max-width: 40%;
   padding: 50px 90px;
 }
+
+.form input{
+  border: 0;
+  width: 100%;
+  background: none;
+  display: block;
+  text-align: center;
+  border: 1px solid;
+  padding: 14px 20px;
+  outline: none;
+  color: #A7A7A7;
+  border-radius: 24px;
+  transition: 0.25s;
+  box-sizing: border-box;
+  margin: 15px;
+}
+
 
 .text-field {
   margin: 30px auto;

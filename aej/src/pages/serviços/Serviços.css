@@ -35,7 +35,13 @@
 
 .form form{
   max-width: 40%;
-  padding: 50px 90px;
+  padding: 10px 90px;
+}
+
+.form i{
+  display: flex;
+  justify-content: center;
+  
 }
 
 .text-field {
